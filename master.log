@@ -1,0 +1,52 @@
+2026-02-22 10:28:07,512 - INFO - --- Starting ---
+2026-02-22 10:28:07,513 - ERROR - Run crashed: 'DatabaseManager' object has no attribute 'logger'
+2026-02-22 10:32:20,149 - INFO - --- Starting ---
+2026-02-22 10:32:20,149 - INFO - Table Employees created successfully.
+2026-02-22 10:32:20,158 - INFO - Transforming Data...
+2026-02-22 10:32:20,162 - ERROR - An unexpected error occurred: DatabaseManager.get_connection() missing 1 required positional argument: 'self'
+2026-02-22 10:32:20,162 - INFO - Run Successfully.
+2026-02-22 10:32:30,158 - INFO - --- Starting ---
+2026-02-22 10:32:30,159 - INFO - Table Employees created successfully.
+2026-02-22 10:32:30,168 - INFO - Transforming Data...
+2026-02-22 10:32:30,171 - ERROR - An unexpected error occurred: DatabaseManager.get_connection() missing 1 required positional argument: 'self'
+2026-02-22 10:32:30,172 - INFO - Run Successfully.
+2026-02-22 10:36:41,953 - INFO - --- Starting ---
+2026-02-22 10:36:41,953 - INFO - Table Employees created successfully.
+2026-02-22 10:36:41,964 - INFO - Transforming Data...
+2026-02-22 10:36:41,984 - INFO - Successfully ingested 2470 records.
+2026-02-22 10:36:41,985 - INFO - Run Successfully.
+2026-02-22 10:38:17,069 - INFO - --- Starting ---
+2026-02-22 10:38:17,070 - INFO - ------Table Employees created successfully.--------
+2026-02-22 10:38:17,079 - INFO - -------- Transforming Data -----------
+2026-02-22 10:38:17,098 - INFO - Successfully ingested 2470 records.
+2026-02-22 10:38:17,099 - INFO - ------ Run Successfully. -------
+2026-02-22 10:39:36,533 - INFO - Starting
+2026-02-22 10:39:36,534 - INFO - Table Employees created successfully.
+2026-02-22 10:39:36,552 - INFO - Transforming Data.
+2026-02-22 10:39:36,586 - INFO - Successfully ingested 2470 records.
+2026-02-22 10:39:36,588 - INFO - Run Successfully.
+2026-02-22 22:26:33,230 - INFO - Starting
+2026-02-22 22:26:33,230 - INFO - Table Employees created successfully.
+2026-02-22 22:26:33,248 - INFO - Transforming Data.
+2026-02-22 22:26:33,278 - INFO - Successfully ingested 2470 records.
+2026-02-22 22:26:33,279 - INFO - Run Successfully.
+2026-02-22 22:26:57,679 - INFO - Starting
+2026-02-22 22:26:57,680 - INFO - Table Employees created successfully.
+2026-02-22 22:26:57,699 - INFO - Transforming Data.
+2026-02-22 22:26:57,729 - INFO - Successfully ingested 2470 records.
+2026-02-22 22:26:57,731 - INFO - Run Successfully.
+2026-02-22 22:28:30,567 - INFO - Starting
+2026-02-22 22:28:30,568 - INFO - Table Employees created successfully.
+2026-02-22 22:28:30,587 - INFO - Transforming Data.
+2026-02-22 22:28:30,615 - INFO - Successfully ingested 2470 records.
+2026-02-22 22:28:30,617 - INFO - Run Successfully.
+2026-02-22 22:28:57,103 - INFO - Starting
+2026-02-22 22:28:57,104 - INFO - Table Employees created successfully.
+2026-02-22 22:28:57,122 - INFO - Transforming Data.
+2026-02-22 22:28:57,151 - INFO - Successfully ingested 2470 records.
+2026-02-22 22:28:57,153 - INFO - Run Successfully.
+2026-02-22 22:30:34,107 - INFO - Starting
+2026-02-22 22:30:34,108 - INFO - Table Employees created successfully.
+2026-02-22 22:30:34,126 - INFO - Transforming Data.
+2026-02-22 22:30:34,179 - INFO - Successfully ingested 2470 records.
+2026-02-22 22:30:34,180 - INFO - Run Successfully.
