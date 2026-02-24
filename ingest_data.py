@@ -32,7 +32,7 @@ class DataIngest:
         df_transformed['job_role'] = df['JobRole']
         df_transformed['salary'] = pd.to_numeric(df['MonthlyIncome']).fillna(0.0)
         df_transformed['experience'] = pd.to_numeric(df['TotalWorkingYears']).fillna(0).astype(int)
-        df_transformed['level'] = pd.to_numeric(df['JobLevel']).fillna(0).astype(int)
+        df_transformed['job_level'] = pd.to_numeric(df['JobLevel']).fillna(0).astype(int)
     
         return df_transformed
 

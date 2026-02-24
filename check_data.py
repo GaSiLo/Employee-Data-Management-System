@@ -28,7 +28,7 @@ class data_view():
                  print(f"{row['emp_id']:<6} | {row['name']:<20} | {row['email']:<30} |"
                        f"{row['age']:<4} | {row['gender']:<6} | {row['marital_status']:<10} |"
                        f"{row['department']:<30} | {row['job_role']:<30} | {row['salary']:<8.0f} |"
-                       f"{row['experience']:<4} | {row['level']:<4}")
+                       f"{row['experience']:<4} | {row['job_level']:<4}")
                 
         except Exception as e:
             self.logger.error(f"Database read error: {e}")

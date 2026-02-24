@@ -1,40 +1,37 @@
-
 <html>
 <head>
-    <title>Employee Management </title>
- 
+    <title>Employee Management</title>
 </head>
 <body>
 
     <h2>Employee Directory</h2>
 
-    
-        <form action="/" method="GET" >
-            <input type="text" name="search" placeholder="Search by name or department..." value="{{ request.args.get('search', '') }}">
-            <button type="submit">Search</button>
-            {% if request.args.get('search') %}
-                <a href="/" >Clear Search</a>
-            {% endif %}
-        </form>
-    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <p class="message-{{ category }}"><b>{{ message }}</b></p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form action="/" method="GET">
+        <input type="text" name="search" placeholder="Search by name or emp_id..." value="{{ request.args.get('search', '') }}">
+        <button type="submit">Search</button>
+        {% if request.args.get('search') %}
+            <a href="/">Clear Search</a>
+        {% endif %}
+    </form>
 
-        <a href="/add" >Add New Employee</a>
-    </div>
+    <br>
+    <a href="/add">Add New Employee</a>
 
     <table>
         <thead>
             <tr>
                 <th>Emp ID</th>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Marital Status</th>
                 <th>Department</th>
                 <th>Job Role</th>
-                <th>Salary</th>
-                <th>Exp (Yrs)</th>
-                <th>Level</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -42,19 +39,13 @@
             <tr>
                 <td>{{ emp['emp_id'] }}</td>
                 <td>{{ emp['name'] }}</td>
-                <td>{{ emp['email'] }}</td>
-                <td>{{ emp['age'] }}</td>
-                <td>{{ emp['gender'] }}</td>
-                <td>{{ emp['marital_status'] }}</td>
                 <td>{{ emp['department'] }}</td>
                 <td>{{ emp['job_role'] }}</td>
-                <td>{{ emp['salary'] }}</td>
-                <td>{{ emp['experience'] }}</td>
-                <td>{{ emp['job_level'] }}</td>
-            </tr>
-            {% else %}
-            <tr>
-                <td >No employees found matching "{{ request.args.get('search') }}".</td>
+                <td>
+                    <form action="{{ url_for('delete_employee', id=emp['emp_id']) }}" method="POST" onsubmit="return confirm('Delete this record?');">
+                        <button type="submit" style="color: red; cursor: pointer;">Delete</button>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

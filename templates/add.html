@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Add Employee</title>
+    </head>
+    <body>
+        <h2>Add new Employee</h2>
+        <hr>
+       {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p style="color:green;"><b>{{ message }}</b></p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+        <form method="POST">
+            <label>Emp Id:</label><br>
+            <input type="number" name="emp_id" required><br><br>
+
+            <label>Name:</label><br>
+            <input type="text" name="name" required><br><br>
+            
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br><br>
+            
+            <label>Age:</label><br>
+            <input type="number" name="age" ><br><br>
+            
+            <label>Gender:</label><br>
+            <select name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>    
+            </select><br><br>
+
+            <label>Marital Status:</label><br>
+            <select name="marital_status">
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>    
+            </select><br><br>
+
+            <label>Department:</label><br>
+            <select name="department">
+                <option value="Sales">Sales</option>
+                <option value="Research & Development">Research & Development</option>    
+            </select><br><br>
+
+            <label>Job Role:</label><br>
+            <select name="job_role">
+                <option value="Sales Executive" >Sales Executive</option>
+                <option value="Research Scientist">Research Scientist</option>    
+            </select><br><br>
+
+            <label>Salary:</label><br>
+            <input type="number" name="salary" step="'0.01"><br><br>
+
+            <label>Experience:</label><br>
+            <input type="number" name="experience" ><br><br>
+
+            <label>Job Level:</label><br>
+            <input type="number" name="job_level" ><br><br>
+
+            <button type="submit">Insert Employee</button>
+            <a href="/">Back</a>
+        </form>
+    </body>
+</html>

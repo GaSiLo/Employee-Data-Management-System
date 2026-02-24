@@ -1,10 +1,11 @@
-from flask import Flask,render_template,request,redirect,url_for
+from flask import Flask,render_template,request,redirect,url_for,flash
 import sqlite3
 
 
 
 
 app=Flask(__name__)
+app.secret_key="supersecretkey"
 def get_db_connection():
     conn=sqlite3.connect('Employees.db')
     conn.row_factory=sqlite3.Row
@@ -13,13 +14,13 @@ def get_db_connection():
 @app.route('/')
 def index():
     conn=get_db_connection()
-    search=request.args.get('search')
+    search=request.args.get('search',' ').strip()
     if search:
-        query='SELECT * FROM employees WHERE name LIKE ? OR department LIKE ?'
-        para=('%' + search + '%', '%' + search + '%')
+        query='SELECT * FROM employees WHERE name LIKE ? OR emp_id LIKE ?'
+        para=(f'%{search}%', f'%{search}%')
         employees=conn.execute(query,para).fetchall()
     else:
-        employees=conn.execute('SELECT * FROM employees').fetchall()
+        employees=conn.execute('SELECT * FROM employees order by RANDOM() LIMIT 10').fetchall()
         
         
     conn.close()
@@ -30,26 +31,66 @@ def index():
 @app.route('/add',methods=('GET','POST'))
 def add_employee():
     if request.method=='POST':
-        emp_id=request.form['emp_id']
-        name=request.form['name']
-        email=request.form['email']
-        age=request.form['age']
-        gender=request.form['gender']
-        marital_status=request.form['marital_status']
-        department=request.form['department']
-        job_role=request.form['job_role']
-        salary=request.form['salary']
-        experience=request.form['experience']
-        job_level= request.form['job_level']
-        conn=get_db_connection()
-        conn.execute('INSERT INTO employees (emp_id,name,email,age,gender,marital_status,department,job_role,salary,experience,job_level) values(?,?,?,?,?,?,?,?,?,?,?)',(emp_id,name,email,age,gender,marital_status,department,job_role,salary,experience,job_level)
-                     )
+        emp_id = request.form.get('emp_id')
+        name = request.form.get('name')
+        email = request.form.get('email')
+        age = request.form.get('age')
+        gender = request.form.get('gender')
+        marital_status = request.form.get('marital_status')
+        department = request.form.get('department')
+        job_role = request.form.get('job_role')
+        salary = request.form.get('salary')
+        experience = request.form.get('experience')
+        job_level = request.form.get('level')
+        
+        conn=None
+        
+        try:
 
-        conn.commit()
-        conn.close()
-        return redirect(url_for('index'))
+            conn=get_db_connection()
+            conn.execute('''
+                         INSERT INTO employees (
+                    emp_id, name, email, age, gender, marital_status, 
+                    department, job_role, salary, experience, job_level
+                ) VALUES (?,?,?,?,?,?,?,?,?,?,?)''', 
+                (emp_id, name, email, age, gender, marital_status, 
+                 department, job_role, salary, experience, job_level)
+            )
+            conn.commit()
+           
+            flash(f'Successfully added {name} to the database!','success')
+            return redirect(url_for('add_employee'))
+        except sqlite3.IntegrityError:
+            flash('Error: this id / email already exists in the system.','danger')
+        except Exception as e:
+            flash(f'An Error has occured: {str(e)}','danger')
+        finally:
+            if conn:
+                conn.close()
     return render_template('add.html')
 
+@app.route('/delete/<int:id>', methods=['POST'])
+def delete_employee(id):
+    conn=None
+    try:
+        conn = get_db_connection()
+        employee = conn.execute('SELECT name FROM employees WHERE emp_id = ?', (id,)).fetchone()
+
+        if employee:
+            emp_name = employee['name']
+            conn.execute('DELETE FROM employees WHERE emp_id = ?', (id,))
+            conn.commit()
+            flash(f'Successfully deleted {emp_name}', 'success')
+        else:
+            flash('Error: Employee record not found.', 'danger')
+            
+    except Exception as e:
+        flash(f'An error occurred during deletion: {str(e)}', 'danger')
+    finally:
+        if conn:
+            conn.close()
+            
+    return redirect(url_for('index'))
 
 if __name__=='__main__':
     app.run(debug=True)
