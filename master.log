@@ -50,3 +50,53 @@
 2026-02-22 22:30:34,126 - INFO - Transforming Data.
 2026-02-22 22:30:34,179 - INFO - Successfully ingested 2470 records.
 2026-02-22 22:30:34,180 - INFO - Run Successfully.
+2026-02-23 10:53:08,462 - INFO - Starting
+2026-02-23 10:53:08,463 - INFO - Table Employees created successfully.
+2026-02-23 10:53:08,473 - INFO - Transforming Data.
+2026-02-23 10:53:08,496 - INFO - Successfully ingested 2470 records.
+2026-02-23 10:53:08,497 - INFO - Run Successfully.
+2026-02-23 11:15:59,353 - INFO - Starting
+2026-02-23 11:15:59,354 - INFO - Table Employees created successfully.
+2026-02-23 11:15:59,363 - INFO - Transforming Data.
+2026-02-23 11:15:59,387 - INFO - Successfully ingested 2470 records.
+2026-02-23 11:15:59,388 - INFO - Run Successfully.
+2026-02-23 11:16:08,637 - INFO - Starting
+2026-02-23 11:16:08,638 - INFO - Table Employees created successfully.
+2026-02-23 11:16:08,647 - INFO - Transforming Data.
+2026-02-23 11:16:08,664 - INFO - Successfully ingested 2470 records.
+2026-02-23 11:16:08,664 - INFO - Run Successfully.
+2026-02-23 11:16:09,900 - INFO - Starting
+2026-02-23 11:16:09,901 - INFO - Table Employees created successfully.
+2026-02-23 11:16:09,910 - INFO - Transforming Data.
+2026-02-23 11:16:09,929 - INFO - Successfully ingested 2470 records.
+2026-02-23 11:16:09,931 - INFO - Run Successfully.
+2026-02-23 12:13:49,137 - INFO - Starting
+2026-02-23 12:13:49,139 - INFO - Table Employees created successfully.
+2026-02-23 12:13:49,164 - INFO - Transforming Data.
+2026-02-23 12:13:49,203 - INFO - Successfully ingested 2470 records.
+2026-02-23 12:13:49,205 - INFO - Run Successfully.
+2026-02-23 17:53:44,046 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-02-23 17:53:44,046 - INFO - [33mPress CTRL+C to quit[0m
+2026-02-23 17:53:44,047 - INFO -  * Restarting with stat
+2026-02-23 17:53:44,190 - WARNING -  * Debugger is active!
+2026-02-23 17:53:44,193 - INFO -  * Debugger PIN: 209-239-805
+2026-02-23 17:54:14,288 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-02-23 17:54:14,288 - INFO - [33mPress CTRL+C to quit[0m
+2026-02-23 17:54:14,289 - INFO -  * Restarting with stat
+2026-02-23 17:54:14,424 - WARNING -  * Debugger is active!
+2026-02-23 17:54:14,426 - INFO -  * Debugger PIN: 209-239-805
+2026-02-24 09:27:15,914 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-02-24 09:27:15,914 - INFO - [33mPress CTRL+C to quit[0m
+2026-02-24 09:27:15,915 - INFO -  * Restarting with stat
+2026-02-24 09:27:16,164 - WARNING -  * Debugger is active!
+2026-02-24 09:27:16,169 - INFO -  * Debugger PIN: 209-239-805
+2026-02-24 10:16:05,565 - INFO -  * Detected change in '/home/vijn/Documents/Employee_Data_Management_System/app.py', reloading
+2026-02-24 10:16:05,625 - INFO -  * Restarting with stat
+2026-02-24 11:03:15,967 - INFO - Starting
+2026-02-24 11:03:15,967 - INFO - Table Employees created successfully.
+2026-02-24 11:03:15,979 - INFO - Transforming Data.
+2026-02-24 11:03:16,011 - INFO - Successfully ingested 2470 records.
+2026-02-24 11:03:16,012 - INFO - Run Successfully.
