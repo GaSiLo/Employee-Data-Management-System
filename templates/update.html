@@ -1,0 +1,64 @@
+<html>
+<head><title>Update Employee</title></head>
+<body>
+    <h2>Update Employee Details</h2>
+    <hr>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+              <p style="color: {% if category == 'success' %}green{% else %}red{% endif %};">
+                  <b>{{ message }}</b>
+              </p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST">
+            <label>Emp Id:</label><br>
+            <input type="number" name="emp_id" value="{{ emp['emp_id'] }}" readonly><br><br>
+
+            <label>Name:</label><br>
+            <input type="text" name="name" value="{{ emp['name'] }}" required><br><br>
+            
+            <label>Email:</label><br>
+            <input type="email" name="email" value="{{ emp['email'] }}" required><br><br>
+            
+            <label>Age:</label><br>
+            <input type="number" name="age" value="{{ emp['age'] }}"><br><br>
+            
+            <label>Gender:</label><br>
+            <input type='text' name="gender" value="{{ emp['gender'] }}"><br><br>
+
+            <label>Marital Status:</label><br>
+            <input type='text' name="marital_status" value="{{ emp['marital_status'] }}"><br><br>
+
+            <label>Department:</label><br>
+            <input type='text' name="department" value="{{ emp['department'] }}"><br><br>
+
+            <label>Job Role:</label><br>
+            <input type='text' name="job_role" value="{{ emp['job_role'] }}"><br><br>
+
+            <label>Salary:</label><br>
+            <input type="number" name="salary" value="{{ emp['salary'] }}" step="0.01"><br><br>
+
+            <label>Experience:</label><br>
+            <input type="number" name="experience" value="{{ emp['experience'] }}" ><br><br>
+
+            <label>Job Level:</label><br>
+            <input type="number" name="job_level"  value="{{ emp['job_level'] }}"><br><br>
+
+            <button type="submit">Update Employee</button>
+
+            <a href="/">
+                <button type="button">
+                    {% if messages and messages[0][0] == 'success' %}
+                        Back
+                    {% else %}
+                        Cancel
+                    {% endif %}
+                </button>
+            </a>
+        </form>
+    {% endwith %}
+</body>
+</html>

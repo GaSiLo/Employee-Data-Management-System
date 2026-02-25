@@ -9,26 +9,89 @@
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for category, message in messages %}
-          <p class="message-{{ category }}"><b>{{ message }}</b></p>
+        <!-- <p class="message-{{ category }}"><b>{{ message }}</b></p> -->
+         <p style="color: {% if category == 'success' %}green{% else %}red{% endif %};"><b>{{ message }}</b></p>
         {% endfor %}
+        
       {% endif %}
     {% endwith %}
     <form action="/" method="GET">
         <input type="text" name="search" placeholder="Search by name or emp_id..." value="{{ request.args.get('search', '') }}">
         <button type="submit">Search</button>
         {% if request.args.get('search') %}
-            <a href="/">Clear Search</a>
+<button type="button" onclick="window.location.href='/';">Clear Search</button>
         {% endif %}
     </form>
+<!-- <p>Please search for an employee to see details.</p> -->
+    <!-- <a href="/add"><button type="button">Add Employee</button></a> -->
+<hr>
+    <a href="/add"><button type="button">Add Employee</button></a>
+        
+        <button type="button" onclick="let id = prompt('Enter Employee ID to Edit:'); if(id) window.location.href='/update/'+id;">
+            Edit Employee
+        </button>
 
-    <br>
-    <a href="/add">Add New Employee</a>
+        <button type="button" style="color: red;" onclick="let id = prompt('Enter Employee ID to Delete:'); if(id && confirm('Are you sure?')) { document.getElementById('del-form').action='/delete/'+id; document.getElementById('del-form').submit(); }">
+            Delete Employee
+        </button>
 
+        <a href="/download">
+        <button type="button">
+            Download 
+        </button>
+    </a>
+  
+  <form id="del-form" method="POST" style="display: none;"></form>
+<br><br>
+    {% if employees %}
     <table>
         <thead>
             <tr>
                 <th>Emp ID</th>
                 <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Job Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in employees %}
+            <tr>
+                <td>{{ emp['emp_id'] }}</td>
+                <td>{{ emp['name'] }}</td>
+                <td>{{ emp['email'] }}</td>
+                <td>{{ emp['department'] }}</td>
+                <td>{{ emp['job_role'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% elif request.args.get('search') %}
+        <p>No results found for your search.</p>
+    {% else %}
+        
+    {% endif %}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+        <!-- <table>
+        <thead>
+            <tr>
+                <th>Emp ID</th>
+                <th>Name</th>
+                <th>Email</th>
                 <th>Department</th>
                 <th>Job Role</th>
                 <th>Actions</th>
@@ -39,9 +102,15 @@
             <tr>
                 <td>{{ emp['emp_id'] }}</td>
                 <td>{{ emp['name'] }}</td>
+                <td>{{emp['email']}}</td>
                 <td>{{ emp['department'] }}</td>
                 <td>{{ emp['job_role'] }}</td>
                 <td>
+                    <a href="{{ url_for('update_employee', id=emp['emp_id']) }}" style="text-decoration: none;">
+        <button type="button" style=" color: black;">
+            Edit
+        </button>
+    </a>
                     <form action="{{ url_for('delete_employee', id=emp['emp_id']) }}" method="POST" onsubmit="return confirm('Delete this record?');">
                         <button type="submit" style="color: red; cursor: pointer;">Delete</button>
                     </form>
@@ -49,7 +118,7 @@
             </tr>
             {% endfor %}
         </tbody>
-    </table>
+    </table> -->
 
 </body>
 </html>

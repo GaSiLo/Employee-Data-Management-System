@@ -105,3 +105,13 @@
 2026-02-24 16:45:00,912 - INFO - Transforming Data.
 2026-02-24 16:45:00,931 - INFO - Successfully ingested 2470 records.
 2026-02-24 16:45:00,932 - INFO - Run Successfully.
+2026-02-24 17:43:13,859 - INFO - Starting
+2026-02-24 17:43:13,860 - INFO - Table Employees created successfully.
+2026-02-24 17:43:13,871 - INFO - Transforming Data.
+2026-02-24 17:43:13,894 - INFO - Successfully ingested 2470 records.
+2026-02-24 17:43:13,895 - INFO - Run Successfully.
+2026-02-24 18:57:20,916 - INFO - Starting
+2026-02-24 18:57:20,916 - INFO - Table Employees created successfully.
+2026-02-24 18:57:20,929 - INFO - Transforming Data.
+2026-02-24 18:57:20,950 - INFO - Successfully ingested 2470 records.
+2026-02-24 18:57:20,951 - INFO - Run Successfully.

@@ -1,0 +1,24 @@
+2026-02-25 15:54:43,387 - INFO - Starting
+2026-02-25 15:56:13,013 - INFO - Successfully ingested 1 record (ID: 2000).
+2026-02-25 15:57:15,748 - INFO - Successfully updated record ID: 2000.
+2026-02-25 15:57:36,164 - INFO - Successfully deleted record ID: 2000.
+2026-02-25 15:57:48,377 - INFO - Transforming Data for CSV Download.
+2026-02-25 15:57:48,385 - INFO - Successfully exported 1469 records.
+2026-02-25 16:57:35,930 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 16:57:36,147 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 11:34:20,594 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 11:34:20,781 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 11:34:49,650 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 11:34:49,847 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 11:35:32,839 - INFO - Successfully updated record ID: 1.
+2026-02-25 17:07:40,592 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 17:07:40,784 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 17:09:27,318 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 17:10:11,072 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 17:11:00,333 - INFO - Successfully ingested 1 record (ID: 4000).
+2026-02-25 17:11:12,916 - INFO - Successfully updated record ID: 4000.
+2026-02-25 17:11:44,432 - INFO - Successfully deleted record ID: 4000.
+2026-02-25 17:12:01,693 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 17:15:40,260 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 17:16:54,802 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 17:18:15,602 - INFO - Starting Server at http://127.0.0.1:5000
