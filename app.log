@@ -22,3 +22,7 @@
 2026-02-25 17:15:40,260 - INFO - Starting Server at http://127.0.0.1:5000
 2026-02-25 17:16:54,802 - INFO - Starting Server at http://127.0.0.1:5000
 2026-02-25 17:18:15,602 - INFO - Starting Server at http://127.0.0.1:5000
+2026-02-25 17:23:33,758 - INFO - Starting Server at http://127.0.0.1:5000
+
+2026-02-26 12:38:00,952 - INFO - Successfully updated record ID: 1.
+2026-02-26 12:38:14,301 - INFO - Successfully deleted record ID: 1.
